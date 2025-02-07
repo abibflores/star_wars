@@ -1,4 +1,4 @@
-import { People } from "@/types/people";
+import { People } from "@/interface/people";
 import { ColumnDef } from "@tanstack/react-table";
 
 export const columnsForPeople: ColumnDef<People>[] = [

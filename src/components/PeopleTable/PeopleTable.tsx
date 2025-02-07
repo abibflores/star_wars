@@ -1,8 +1,8 @@
 "use client";
-import { People } from "@/types/people";
 import { columnsForPeople } from "@/utils/table";
 import { Table } from "../Table/Table";
 import { useState } from "react";
+import { People } from "@/interface/people";
 
 export const PeopleTable = ({ list }: { list: (People | null)[] }) => {
   const cleanList = list.filter((item) => item !== null) as People[];

@@ -1,7 +1,7 @@
 import { PeopleTable } from "@/components/PeopleTable/PeopleTable";
+import { People } from "@/interface/people";
 import { fetchMovie } from "@/services/movies";
 import { fetchPeolpleByUrl } from "@/services/peolple";
-import { People } from "@/types/people";
 
 export default async function PeoplePage({
   params,
