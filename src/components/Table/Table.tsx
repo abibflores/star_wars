@@ -21,7 +21,7 @@ export const Table = ({
   });
 
   return (
-    <div className="p-4">
+    <div className="p-4 min-h-[500]">
       <table className="w-full border-collapse border border-gray-300">
         <thead>
           {table.getHeaderGroups().map((headerGroup) => (
