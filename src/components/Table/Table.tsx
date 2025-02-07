@@ -5,7 +5,10 @@ import {
   getCoreRowModel,
   flexRender,
   ColumnDef,
+  SortingState,
+  getSortedRowModel,
 } from "@tanstack/react-table";
+import { useState } from "react";
 
 export const Table = ({
   data,
@@ -14,10 +17,15 @@ export const Table = ({
   data: People[];
   columns: ColumnDef<People>[];
 }) => {
+  const [sorting, setSorting] = useState<SortingState>([]);
+
   const table = useReactTable({
     data,
     columns,
     getCoreRowModel: getCoreRowModel(),
+    getSortedRowModel: getSortedRowModel(),
+    onSortingChange: setSorting,
+    state: { sorting },
   });
 
   return (
@@ -29,12 +37,18 @@ export const Table = ({
               {headerGroup.headers.map((header) => (
                 <th
                   key={header.id}
-                  className="border p-2 bg-gray-700 text-white"
+                  className="border p-2 bg-gray-700 text-white cursor-pointer"
+                  onClick={header.column.getToggleSortingHandler()}
                 >
                   {flexRender(
                     header.column.columnDef.header,
                     header.getContext()
                   )}
+                  {header.column.getIsSorted() === "asc"
+                    ? " 🔼"
+                    : header.column.getIsSorted() === "desc"
+                    ? " 🔽"
+                    : ""}
                 </th>
               ))}
             </tr>
