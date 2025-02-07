@@ -13,12 +13,14 @@ import { useState } from "react";
 export const Table = ({
   data,
   columns,
+  defatultSorting = [],
 }: {
   data: People[];
   columns: ColumnDef<People>[];
+  defatultSorting?: SortingState;
 }) => {
-  const [sorting, setSorting] = useState<SortingState>([]);
-
+  const [sorting, setSorting] = useState<SortingState>(defatultSorting);
+  console.log(sorting, "sorting");
   const table = useReactTable({
     data,
     columns,

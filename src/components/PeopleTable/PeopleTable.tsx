@@ -30,7 +30,11 @@ export const PeopleTable = ({ list }: { list: (People | null)[] }) => {
   return (
     <div>
       <h2 className="text-2xl font-bold p-4">Personajes</h2>
-      <Table columns={columnsForPeople} data={paginatedData} />
+      <Table
+        columns={columnsForPeople}
+        data={paginatedData}
+        defatultSorting={[{ id: "name", desc: false }]}
+      />
       <div className="flex justify-between p-4">
         <button
           onClick={handlePrevPage}
