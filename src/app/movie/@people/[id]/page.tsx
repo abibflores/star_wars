@@ -1,0 +1,34 @@
+import { PeopleTable } from "@/components/PeopleTable/PeopleTable";
+import { fetchMovie } from "@/services/movies";
+import { fetchPeolpleByUrl } from "@/services/peolple";
+import { People } from "@/types/people";
+
+export default async function PeoplePage({
+  params,
+}: {
+  params: { id: string };
+}) {
+  const { id } = await params;
+  const movieData = await fetchMovie(id);
+  let peopleData: (People | null)[] = [];
+
+  const listPeople = movieData.characters;
+
+  try {
+    const listPeoplePromises = listPeople.map((person) => {
+      return fetchPeolpleByUrl(person);
+    });
+    peopleData = await Promise.all(listPeoplePromises);
+  } catch (error) {
+    console.error("Error fetching people", error);
+    throw new Error("Error fetching people");
+  }
+
+  console.log(peopleData, "peopleData");
+
+  return (
+    <div>
+      <PeopleTable list={peopleData} />
+    </div>
+  );
+}
