@@ -5,7 +5,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
   people: React.ReactNode;
-  modal?: React.ReactNode;
+  modal: React.ReactNode;
 }) {
   return (
     <html lang="en">

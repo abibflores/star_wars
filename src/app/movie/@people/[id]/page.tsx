@@ -6,7 +6,7 @@ import { fetchPeolpleByUrl } from "@/services/peolple";
 export default async function PeoplePage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
   const movieData = await fetchMovie(id);
