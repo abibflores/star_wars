@@ -15,3 +15,8 @@ export const buildPathImageUrl = (episodeId: number) => {
 export const getEpisodeNumber = (episodeId: number): string => {
   return titles[episodeId];
 };
+
+export const getMovieId = (url: string): string => {
+  const id = url.match(/\d+/) || 1;
+  return String(id);
+};
