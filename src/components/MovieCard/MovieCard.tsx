@@ -17,7 +17,7 @@ export const MovieCard = ({ movie }: { movie: Movie }) => {
       <div className="bg-gray-800 p-4 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
         <Image src={imageUrl} alt={movie.title} width={400} height={550} />
         <h2 className="text-2xl font-semibold h-20 m-4">
-          {title}:{movie.title}
+          {`${title}: ${movie.title}`}
         </h2>
       </div>
     </Link>
