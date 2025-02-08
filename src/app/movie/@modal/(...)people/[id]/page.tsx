@@ -20,8 +20,8 @@ export default async function ModalPeoplePage({
 	if (!people) return notFound();
 
 	return (
-		<div className="w-full flex items-center justify-center min-h-screen fixed top-0 left-0 bg-black/50 backdrop-blur-sm z-20">
-			<PeopleCard people={people} id={id} />
+		<div className="w-full flex items-center justify-center min-h-dvh fixed top-0 left-0 bg-black/50 backdrop-blur z-20">
+			<PeopleCard people={people} id={id} isModal />
 		</div>
 	);
 }

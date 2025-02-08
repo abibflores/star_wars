@@ -4,14 +4,22 @@ import {Button} from "@/components/ui/button";
 
 import {Character} from "@/interface/people";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import {useRouter} from "next/navigation";
 
-export const PeopleCard = ({people, id}: {people: Character; id: string}) => {
-    const router = useRouter()
+export const PeopleCard = ({
+	people,
+	id,
+	isModal = false,
+}: {
+	people: Character;
+	id: string;
+	isModal?: boolean;
+}) => {
+	const router = useRouter();
 	const characterImage = `https://starwars-visualguide.com/assets/img/characters/${id}.jpg`;
 
 	return (
-		<Card className="w-full max-w-md">
+		<Card className=" w-[320] md:w-full max-w-md bg-white">
 			<CardHeader>
 				<CardTitle className="text-center">{people.name}</CardTitle>
 			</CardHeader>
@@ -37,9 +45,15 @@ export const PeopleCard = ({people, id}: {people: Character; id: string}) => {
 						<strong>Año de Nacimiento:</strong> {people.birth_year}
 					</li>
 				</ul>
-				<Button variant="outline" onClick={() => router.back()}>
-					⬅️ Volver
-				</Button>
+				{isModal && (
+					<Button
+						variant="outline"
+						className="bg-white absolute top-2 right-2 bg-gray-800 text-white rounded-full p-2 hover:bg-gray-700 transition"
+						onClick={() => router.back()}
+					>
+						⬅️ Cerrar
+					</Button>
+				)}
 			</CardContent>
 		</Card>
 	);

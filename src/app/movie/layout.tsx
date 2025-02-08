@@ -10,11 +10,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <div>
-          <div>{children}</div>
-          <div>{people}</div>
+        <div className="flex flex-col gap-x-4">
+          {children}
+          {people}
         </div>
-        <div>{modal}</div>
+        {modal}
       </body>
     </html>
   );

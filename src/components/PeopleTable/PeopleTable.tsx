@@ -10,8 +10,8 @@ export const PeopleTable = ({ list }: { list: (People | null)[] }) => {
   const [globalFilter, setGlobalFilter] = useState("");
 
   return (
-    <div>
-      <h2 className="text-2xl font-bold p-4">Personajes</h2>
+    <div className="mt-6 w-full overflow-x-hidden">
+      <h2 className="flex justify-center text-2xl font-bold p-6">Personajes</h2>
       <div className="p-4">
         <input
           type="text"

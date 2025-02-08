@@ -16,7 +16,7 @@ export default async function CharacterPage({ params }: { params: Promise<{ id: 
   if (!people) return notFound();
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100 p-6">
+    <div className="flex w-full items-center justify-center min-h-screen bg-gray-100 p-4">
         <PeopleCard people={people} id={id} />
     </div>);
 }

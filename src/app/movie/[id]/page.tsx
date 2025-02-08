@@ -7,7 +7,7 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
   const data = await fetchMovie(id);
 
   return (
-    <div>
+    <div className="min-h-screen">
       <MovieDetail movie={data} />
     </div>
   );
