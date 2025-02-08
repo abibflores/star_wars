@@ -1,0 +1,58 @@
+@keyframes pulse {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .container {
+    margin-top: 24px;
+    width: 100%;
+    padding: 16px;
+    background: #2d3748; /* bg-gray-800 */
+    border-radius: 8px;
+    animation: pulse 1.5s infinite ease-in-out;
+  }
+  
+  .title {
+    height: 30px;
+    width: 30%;
+    background: #4a5568; /* bg-gray-700 */
+    border-radius: 4px;
+    margin: 16px auto;
+  }
+  
+  .searchBar {
+    height: 40px;
+    width: 100%;
+    background: #718096; /* bg-gray-600 */
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+  
+  .table {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .row {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    background: #4a5568; /* bg-gray-700 */
+    border-radius: 4px;
+  }
+  
+  .cell {
+    height: 20px;
+    width: 20%;
+    background: #a0aec0; /* bg-gray-500 */
+    border-radius: 4px;
+  }
+  

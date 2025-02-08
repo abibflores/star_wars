@@ -24,8 +24,6 @@ export default async function PeoplePage({
     throw new Error("Error fetching people");
   }
 
-  console.log(peopleData, "peopleData");
-
   return (
     <div>
       <PeopleTable list={peopleData} />
