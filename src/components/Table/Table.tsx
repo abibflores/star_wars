@@ -91,7 +91,7 @@ export const Table = ({
 					))}
 				</tbody>
 			</table>
-			<div className="flex justify-between p-4">
+			<div className="flex justify-between p-6">
 				<button
 					onClick={() => table.previousPage()}
 					disabled={!table.getCanPreviousPage()}
